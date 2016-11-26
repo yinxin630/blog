@@ -1,0 +1,1 @@
+theme: [https://github.com/ptsteadman/hexo-theme-corporate](https://github.com/ptsteadman/hexo-theme-corporate)
