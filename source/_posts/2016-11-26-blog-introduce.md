@@ -2,11 +2,11 @@
 layout: post
 title: 博客迁移说明
 date: 2016-11-26
-thumbnail: /img/2016-11-26-blog-introduce/thumbnail.jpeg
+thumbnail: /img/小鸟游六花.jpeg
 category: other
 tags: 
 - other
-lede: "这里是预览消息."
+lede: "2015年8月26号, 本博客正式上线, 使用 wordpress, apache 和 mysql 等技术搭建. 截止到今日, 本博客累计访问数 503,161, 累计访客数 13,363."
 ---
 
 2015年8月26号, 本博客正式上线, 使用 wordpress, apache 和 mysql 等技术搭建. 截止到今日, 本博客累计访问数 503,161, 累计访客数 13,363.
