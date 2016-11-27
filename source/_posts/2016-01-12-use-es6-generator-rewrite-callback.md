@@ -1,11 +1,13 @@
 ---
 layout: post
+author: 碎碎酱
 title: 使用ES6的Generator函数改写异步回调金字塔
-date: 2016-11-26
+date: 2016-01-12
 thumbnail: /img/javascript-es6.png
-category: other
+category: javascript
 tags: 
-- other
+- javascript
+- es6
 lede: "由于JavaScript是一门异步语言，Node.js中的大量API都是异步函数，异步函数无法得知确切的执行完毕时间，所以通常采用传入callback的方式来使得当异步函数执行完毕时自动调用回调函数。"
 ---
 

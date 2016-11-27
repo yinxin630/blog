@@ -1,5 +1,6 @@
 ---
 layout: post
+author: 碎碎酱
 title: 博客迁移说明
 date: 2016-11-26
 thumbnail: /img/小鸟游六花.jpeg
