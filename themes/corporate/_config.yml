@@ -2,7 +2,6 @@
 menu:
   主页: /
   文章: /archives/ # can set archive-dir in root config to custom value
-  关于: /about/
    
 rss: /atom.xml
 
