@@ -455,8 +455,17 @@ body.page-header-fixed {
   font-size: 23px;
   font-weight: 400;
 
-  margin-right: 67px;
   padding-top: 22px;
+  padding-bottom: 22px;
+  margin-right: 5px;
+}
+
+.site-subtitle {
+  float: left;
+  font-size: 23px;
+  font-weight: 400;
+
+  padding-top: 30px;
   padding-bottom: 22px;
 }
 
@@ -763,6 +772,10 @@ body.page-header-fixed {
 }*/
 .reduce-header .site-logo {
 	padding-top: 9px;
+	padding-bottom: 11px;
+}
+.reduce-header .site-subtitle {
+	padding-top: 16px;
 	padding-bottom: 11px;
 }
 @media (min-width: 1025px) {
