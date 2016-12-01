@@ -2,6 +2,7 @@
 layout: post
 author: 碎碎酱
 title: 将node.js的终端输出重定向到浏览器控制台中
+permalink: node-js-console-log-redirect-to-browser
 date: 2016-07-08
 thumbnail: /img/nodejs-logo.png
 category: javascript

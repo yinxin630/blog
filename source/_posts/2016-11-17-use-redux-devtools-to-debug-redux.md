@@ -2,6 +2,7 @@
 layout: post
 author: 碎碎酱
 title: 使用redux-devtools来调试你的redux
+permalink: use-redux-devtools-to-debug-redux
 date: 2016-11-17
 thumbnail: /img/react-native-logo.png
 category: react-native

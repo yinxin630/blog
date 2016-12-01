@@ -2,6 +2,7 @@
 layout: post
 author: 碎碎酱
 title: Commit Message 编写指南
+permalink: git-commit-written-guide
 date: 2016-01-18
 thumbnail: /img/git-logo.jpg
 category: software

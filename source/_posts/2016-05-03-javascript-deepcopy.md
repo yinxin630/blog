@@ -2,6 +2,7 @@
 layout: post
 author: 碎碎酱
 title: 谈谈JavaScript深复制那些事
+permalink: javascript-deepcopy
 date: 2016-05-3
 thumbnail: /img/javascript-logo.png
 category: javascript

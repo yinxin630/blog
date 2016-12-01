@@ -1,7 +1,8 @@
 ---
 layout: post
 author: 碎碎酱
-title: pm2设置应用NODE_ENV
+title: pm2-set-application-node-env
+permalink: blog-introduce
 date: 2016-09-28
 thumbnail: /img/linux-logo.jpg
 category: sorfware

@@ -2,6 +2,7 @@
 layout: post
 author: 碎碎酱
 title: react native for android中组件不能显示GIF动态图的解决办法
+permalink: react-native-android-image-can-not-show-gif-image-solution
 date: 2016-06-23
 thumbnail: /img/react-native-logo.png
 category: react-native

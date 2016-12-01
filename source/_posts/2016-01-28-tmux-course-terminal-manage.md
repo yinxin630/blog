@@ -2,6 +2,7 @@
 layout: post
 author: 碎碎酱
 title: tmux教程：使用tmux、tmuxinator管理你的终端窗口
+permalink: tmux-course-terminal-manage
 date: 2016-01-28
 thumbnail: /img/tmux.png
 category: software

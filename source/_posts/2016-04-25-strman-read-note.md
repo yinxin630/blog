@@ -2,6 +2,7 @@
 layout: post
 author: 碎碎酱
 title: strman源码阅读笔记
+permalink: strman-read-note
 date: 2016-04-25
 thumbnail: /img/javascript-logo.png
 category: javascript

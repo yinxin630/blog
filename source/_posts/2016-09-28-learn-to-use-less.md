@@ -2,6 +2,7 @@
 layout: post
 author: 碎碎酱
 title: 学习使用Less小记
+permalink: learn-to-use-less
 date: 2016-09-28
 thumbnail: /img/less-logo.png
 category: css

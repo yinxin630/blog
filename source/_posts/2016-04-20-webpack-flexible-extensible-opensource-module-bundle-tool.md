@@ -2,6 +2,7 @@
 layout: post
 author: 碎碎酱
 title: Webpack – 灵活, 可拓展, 开源的模块打包工具
+permalink: webpack-flexible-extensible-opensource-module-bundle-tool
 date: 2016-04-20
 thumbnail: /img/webpack.png
 category: javascript

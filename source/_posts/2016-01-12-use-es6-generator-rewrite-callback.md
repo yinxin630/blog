@@ -2,6 +2,7 @@
 layout: post
 author: 碎碎酱
 title: 使用ES6的Generator函数改写异步回调金字塔
+permalink: use-es6-generator-rewrite-callback
 date: 2016-01-12
 thumbnail: /img/javascript-es6.png
 category: javascript

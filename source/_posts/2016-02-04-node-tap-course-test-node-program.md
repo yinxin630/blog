@@ -2,6 +2,7 @@
 layout: post
 author: 碎碎酱
 title: Node-Tap教程：使用node-tap测试你的node.js程序
+permalink: node-tap-course-test-node-program
 date: 2016-02-04
 thumbnail: /img/node-tap.png
 category: javascript

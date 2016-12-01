@@ -2,6 +2,7 @@
 layout: post
 author: 碎碎酱
 title: JavaScript中各种创建对象方法的优缺点
+permalink: javascript-create-object-method-advantages-and-disadvantages
 date: 2016-07-27
 thumbnail: /img/javascript-logo.png
 category: javascript

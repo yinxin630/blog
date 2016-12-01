@@ -2,6 +2,7 @@
 layout: post
 author: 碎碎酱
 title: CSS中清除浮动的几种方法
+permalink: several-ways-to-clear-float-in-css
 date: 2016-10-10
 thumbnail: /img/css-logo.png
 category: css
