@@ -7,7 +7,7 @@ thumbnail: /img/git-logo.jpg
 category: software
 tags:
 - git
-lede: "我们在每次提交代码时，都需要编写Commit Message，否则是不运行提交的。 `git commit -m "hello world"`, 编写Commit Message需要遵循一定的范式，内容应该清晰明了，指明本次提交的目的，便于日后追踪问题。"
+lede: "我们在每次提交代码时，都需要编写Commit Message，否则是不运行提交的。编写Commit Message需要遵循一定的范式，内容应该清晰明了，指明本次提交的目的，便于日后追踪问题。"
 ---
 
 
