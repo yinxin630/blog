@@ -45,7 +45,7 @@ To inspect output, open a browser to: http://127.0.0.1:50500
 
 打开浏览器访问`http://127.0.0.1:50500`, 打开浏览器的控制台, 可以看到你的程序的输出内容.
 
-<a href="http://blog.suisuijiang.com/wp-content/uploads/2016/07/2421739-0a9d6a92f3796d27.png" rel="attachment wp-att-475"><img src="http://blog.suisuijiang.com/wp-content/uploads/2016/07/2421739-0a9d6a92f3796d27.png" alt="2421739-0a9d6a92f3796d27" width="468" height="121" class="alignleft size-full wp-image-475" /></a>
+![2016-07-08-node-js-console-log-redirect-to-browser-02](/img/2016-07-08-node-js-console-log-redirect-to-browser-02.png)
 
  `node-monkey`默认关联了`console.log`, `console.warn`, `console.error`输出函数, `127.0.0.1:50500`是`node-monkey`的默认地址, 可以通过在`start()`中传入参数来修改.
 
