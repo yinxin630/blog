@@ -69,3 +69,6 @@ theme: corporate
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type:
+
+# 多说
+duoshuo_shortname: iissnan-notes
