@@ -1,6 +1,8 @@
 # Header Menu
 menu:
   主页: /
+  github: https://github.com/yinxin630
+  简历: http://yinxin.deercv.com/
    
 rss: /atom.xml
 
@@ -16,7 +18,6 @@ swiftype_install_key:
 # Social
 social:
   github: https://github.com/yinxin630
-  rss: atom.xml
 
 # Miscellaneous
 color_scheme: turquoise   # options: blue, gray, green, orange, red, turquoise
