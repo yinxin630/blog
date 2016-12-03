@@ -5,11 +5,12 @@ title: 将node.js的终端输出重定向到浏览器控制台中
 permalink: node-js-console-log-redirect-to-browser
 date: 2016-07-08
 thumbnail: /img/nodejs-logo.png
-category: javascript
+category: node.js
 tags:
 - javascript
 - node.js
 lede: "在编写node.js代码时, 我们经常会临时的打印变量来查看内容, 对于一些基本的数据类型, 比如: `Number`, `String`, `Boolean`, 并没有什么问题, 但是当打印`Object`类型时, 如果该`Object`变量具有大量的属性, 我们会得到一个超长的输出内容, 有的时候甚至会超出终端缓冲区大小, 非常不利于观察结果. "
+featured: true
 ---
 
 

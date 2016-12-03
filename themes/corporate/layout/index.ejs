@@ -1,13 +1,5 @@
-<% if(page.content){ %>
-  <%- page.content %>
-<% } else { %>
-  <div class="container">
-    <ul class="breadcrumb">
-      <li class="active">主页</li>
-    </ul>
-  <div id="main">
-    <%- partial('_partial/archive', {pagination: config.archive, index: true}) %>
-  </div>
-  </div>
-<% } %>
-
+<div class="container">
+<div id="main">
+  <%- partial('_partial/archive', {pagination: config.archive, index: false}) %>
+</div>
+</div>

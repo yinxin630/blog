@@ -5,7 +5,7 @@ title: node.js中实现代码Hot-Reload功能
 permalink: in-nodejs-realize-code-hot-reload-function
 date: 2016-07-06
 thumbnail: /img/nodejs-logo.png
-category: javascript
+category: node.js
 tags:
 - javascript
 - node.js

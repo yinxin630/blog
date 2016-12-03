@@ -1,18 +1,18 @@
 <!-- CATEGORIES START -->
-<h2 class="no-top-space">Categories</h2>
+<h2 class="no-top-space">分类</h2>
 <%- partial('_widget/category.ejs') %>
 <!-- CATEGORIES END -->
 
 <!-- BEGIN BLOG TAGS -->
 <div class="blog-tags margin-bottom-20">
-  <h2>Tags</h2>
+  <h2>标签</h2>
   <%- partial('_widget/tag.ejs') %>
 </div>
 <!-- END BLOG TAGS -->
 
 
 <!-- BEGIN FEATURED POSTS -->                            
-<h2>Featured Posts</h2>
+<h2>热门文章</h2>
 <div class="recent-news margin-bottom-10">
   <% site.posts.each(function(post, i){ %>
     <% if (post.featured == true){ %>

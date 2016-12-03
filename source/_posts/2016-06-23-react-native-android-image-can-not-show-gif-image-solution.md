@@ -10,6 +10,7 @@ tags:
 - react
 - react-native
 lede: "在android中运行react-native项目时, 发现gif图是静止的, 本文是该问题的解决办法."
+featured: true
 ---
 
 # 问题表现
