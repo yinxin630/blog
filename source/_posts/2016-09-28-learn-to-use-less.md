@@ -46,7 +46,7 @@ npm install -g less
 
 在webpack配置中添加loader, 并安装相应loader包 `npm install less less-loader css-loader style-loader`
 
-```
+```javascript
 {
     test: /\.less?$/,
     loaders: ['style-loader', 'css-loader', 'less-loader'],
@@ -60,7 +60,7 @@ npm install -g less
 
 ### 在node.js中使用
 
-```
+```javascript
 var less = require('less');
 
 less.render('.class { width: (1 + 1) }', function (e, output) {
@@ -73,7 +73,7 @@ less.render('.class { width: (1 + 1) }', function (e, output) {
 ### 变量
 
 0. 变量属性值
-    ```
+    ```less
     @backColor: green;
 
     body {
@@ -82,14 +82,14 @@ less.render('.class { width: (1 + 1) }', function (e, output) {
     ```
 
     编译为:
-    ```
+    ```css
     body {
     background-color: green;
     }
     ```
 
 0. 变量属性
-    ```
+    ```less
     @bkColor: background-color;
 
     body {
@@ -98,14 +98,14 @@ less.render('.class { width: (1 + 1) }', function (e, output) {
     ```
 
     编译为:
-    ```
+    ```css
     body {
     background-color: red;
     }
     ```
 
 0. 变量选择器
-    ```
+    ```less
     @b: body;
 
     @{b} {
@@ -114,14 +114,14 @@ less.render('.class { width: (1 + 1) }', function (e, output) {
     ```
 
     编译为:
-    ```
+    ```css
     body {
     background-color: yellow;
     }
     ```
 
 0. 变量URL
-    ```
+    ```less
     @domain: "http://cdn.suisuijiang.com/";
 
     body {
@@ -130,14 +130,14 @@ less.render('.class { width: (1 + 1) }', function (e, output) {
     ```
 
     编译为:
-    ```
+    ```css
     body {
     background-image: url("http://cdn.suisuijiang.com/user_57d65f739e1dc93d74ce4811_1473667014140.gif");
     }
     ```
 
 0. 变量做变量名
-    ```
+    ```less
     @pink: pink;
     @other: "pink";
 
@@ -147,7 +147,7 @@ less.render('.class { width: (1 + 1) }', function (e, output) {
     ```
 
     编译为:
-    ```
+    ```css
     body {
     background-color: pink;
     }
@@ -157,7 +157,7 @@ less.render('.class { width: (1 + 1) }', function (e, output) {
 
     变量在使用前不需要定义, 可以把定义放在使用后, 变量值使用当前作用域最终值, 当前作用域不存在该变量时则取父作用域最终值
 
-    ```
+    ```less
     body {
         @color: red;
         background-color: @color;
@@ -168,7 +168,7 @@ less.render('.class { width: (1 + 1) }', function (e, output) {
     ```
 
     编译为:
-    ```
+    ```css
     body {
     background-color: yellow;
     }
@@ -178,7 +178,7 @@ less.render('.class { width: (1 + 1) }', function (e, output) {
 
     由于变量懒加载机制的存在, 我们可以定义变量的默认值, 并在需要改变时直接赋其它值
 
-    ```
+    ```less
     // library
     @base-color: green;
 
@@ -191,7 +191,7 @@ less.render('.class { width: (1 + 1) }', function (e, output) {
 
 0. 选择器内继承
 
-    ```
+    ```less
     .red {
         background-color: red;
     }
@@ -203,7 +203,7 @@ less.render('.class { width: (1 + 1) }', function (e, output) {
     ```
 
     编译为:
-    ```
+    ```css
     .red,
     body {
     background-color: red;
@@ -215,7 +215,7 @@ less.render('.class { width: (1 + 1) }', function (e, output) {
 
 0. 选择器继承
 
-    ```
+    ```less
     .lawngreen {
         background-color: lawngreen;
     }
@@ -226,7 +226,7 @@ less.render('.class { width: (1 + 1) }', function (e, output) {
     ```
 
     编译为:
-    ```
+    ```css
     .lawngreen,
     body {
     background-color: lawngreen;
@@ -238,7 +238,7 @@ less.render('.class { width: (1 + 1) }', function (e, output) {
 
 0. 选择器内的子选择器继承
 
-    ```
+    ```less
     .color {
         .aqua {
             background-color: aqua;
@@ -252,7 +252,7 @@ less.render('.class { width: (1 + 1) }', function (e, output) {
     ```
 
     编译为:
-    ```
+    ```css
     .color {
     background-color: red;
     }
@@ -267,7 +267,7 @@ less.render('.class { width: (1 + 1) }', function (e, output) {
 
 0. 继承所有匹配的选择器
 
-    ```
+    ```less
     .color.a {
         background-color: red;
     }
@@ -281,7 +281,7 @@ less.render('.class { width: (1 + 1) }', function (e, output) {
     ```
 
     编译为:
-    ```
+    ```css
     .color.a,
     body.a {
     background-color: red;
@@ -295,7 +295,7 @@ less.render('.class { width: (1 + 1) }', function (e, output) {
 0. 使用继承比使用属性混合的代码体积更小
 
     使用属性混合:
-    ```
+    ```less
     .my-inline-block {
         display: inline-block;
         font-size: 0;
@@ -309,7 +309,7 @@ less.render('.class { width: (1 + 1) }', function (e, output) {
     ```
 
     编译为:
-    ```
+    ```css
     .thing1 {
     display: inline-block;
     font-size: 0;
@@ -321,7 +321,7 @@ less.render('.class { width: (1 + 1) }', function (e, output) {
     ```
 
     使用继承:
-    ```
+    ```less
     .my-inline-block {
         display: inline-block;
         font-size: 0;
@@ -335,7 +335,7 @@ less.render('.class { width: (1 + 1) }', function (e, output) {
     ```
 
     编译为:
-    ```
+    ```css
     .my-inline-block,
     .thing1,
     .thing2 {
@@ -348,7 +348,7 @@ less.render('.class { width: (1 + 1) }', function (e, output) {
 
 0. 混合其它选择器属性
 
-    ```
+    ```less
     .base {
         background-color: red;
     }
@@ -358,7 +358,7 @@ less.render('.class { width: (1 + 1) }', function (e, output) {
     ```
 
     编译为:
-    ```
+    ```css
     .base {
     background-color: red;
     }
@@ -370,7 +370,7 @@ less.render('.class { width: (1 + 1) }', function (e, output) {
 0. 不输出混合
 
     在混合名称的末尾加上(), 可以不输出该混合
-    ```
+    ```less
     .base() {
         background-color: red;
     }
@@ -380,7 +380,7 @@ less.render('.class { width: (1 + 1) }', function (e, output) {
     ```
 
     编译为:
-    ```
+    ```css
     body {
     background-color: red;
     }
@@ -388,7 +388,7 @@ less.render('.class { width: (1 + 1) }', function (e, output) {
 
 0. 使用!important
 
-    ```
+    ```less
     .base() {
         background-color: red;
     }
@@ -402,7 +402,7 @@ less.render('.class { width: (1 + 1) }', function (e, output) {
     ```
 
     编译为:
-    ```
+    ```css
     body {
     background-color: red;
     display: flex !important;
@@ -413,7 +413,7 @@ less.render('.class { width: (1 + 1) }', function (e, output) {
 
 0. 多个参数
 
-    ```
+    ```less
     .size(@width: 100%, @height: 100%) {
         width: @width;
         height: @height;
@@ -425,7 +425,7 @@ less.render('.class { width: (1 + 1) }', function (e, output) {
     ```
 
     编译为:
-    ```
+    ```css
     .container {
     width: 100px;
     height: 100px;
@@ -435,7 +435,7 @@ less.render('.class { width: (1 + 1) }', function (e, output) {
 
 0. 命名参数传递
 
-    ```
+    ```less
     .size(@width: 100%, @height: 100%) {
         width: @width;
         height: @height;
@@ -447,7 +447,7 @@ less.render('.class { width: (1 + 1) }', function (e, output) {
     ```
 
     编译为:
-    ```
+    ```css
     .container {
     width: 100px;
     height: 200px;
@@ -458,7 +458,7 @@ less.render('.class { width: (1 + 1) }', function (e, output) {
 0. @arguments参数
 
     @arguments参数包含所有的参数值, 如果你不想用单个的参数值来拼接属性, 就可以直接使用@arguments
-    ```
+    ```less
     .shadow(@x; @y; @blur; @color) {
         box-shadow: @arguments;
     }
@@ -470,7 +470,7 @@ less.render('.class { width: (1 + 1) }', function (e, output) {
     ```
 
     编译为:
-    ```
+    ```css
     .container {
     width: 100px;
     height: 100px;
@@ -482,7 +482,7 @@ less.render('.class { width: (1 + 1) }', function (e, output) {
 
 在minin中定义的变量和minxins可以在调用者的作用域使用
 
-```
+```less
 .size() {
     @width: 200px;
     @height: 100px;
@@ -496,7 +496,7 @@ less.render('.class { width: (1 + 1) }', function (e, output) {
 ```
 
 编译为:
-```
+```css
 .container {
   width: 200px;
   height: 100px;
@@ -505,7 +505,7 @@ less.render('.class { width: (1 + 1) }', function (e, output) {
 ```
 
 因此, 我们可以将Mixin当做函数使用, 比如用于计算的函数
-```
+```less
 .sum(@a; @b) {
     @sum: @a + @b;
 }
@@ -518,7 +518,7 @@ less.render('.class { width: (1 + 1) }', function (e, output) {
 ```
 
 编译为:
-```
+```css
 .container {
   width: 110px;
   height: 110px;

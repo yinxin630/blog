@@ -106,7 +106,7 @@ mux new project0
 
 tmuxinator会在`~/.tmuxinator/`目录中创建`project0.yml`文件，编辑`project0.yml`，写入下列内容(**重点提醒：书写时要使用空格缩进，且严格按照图示缩进对其，否则会报语法错误！**)：
 
-```
+```yml
 # ~/.tmuxinator/project0.yml
 
 name: project0

@@ -20,7 +20,8 @@ lede: "使用过webpack做前端的朋友大概知道, webpack有个dev-server�
 首先创建一个`src`目录, 后面我们将监视`src`目录中的代码改动, 在`src`目录创建`app.js`做程序入口:
 
 *app.js*
-```
+
+```javascript
 console.log('app.js');
 ```
 
@@ -29,7 +30,8 @@ console.log('app.js');
 [chokidar](https://www.npmjs.com/package/chokidar)是一个小巧的文件监视库, 它可以获取到目录中文件的改动/新增/删除等事件. 在项目根目录创建`development.js`, `development.js`代码如下所示:
 
 *development.js*
-```
+
+```javascript
 'use strict'
 
 const path = require('path');
@@ -66,18 +68,21 @@ watcher.on('ready', () => {
 由于主进程被用来监视文件了, 所以我们要把主程序运行在子进程中, 当代码发生改动时, 我们可以结束这个子进程并创建新的子进程. 创建进程需要使用[child_process](https://nodejs.org/api/child_process.html)模块, 代码如下所示:
 
 *创建子进程, 启动主程序*
-```
+
+```javascript
 let appIns = cp.fork(path.join(__dirname, '../src/app.js'));
 ```
 
 *发生改动时杀死子进程并重启*
-```
+
+```javascript
 appIns.kill('SIGINT');
 appIns = cp.fork(require('path').join(__dirname, '../src/app.js'));
 ```
 
 *监听SIGINT信息, 终止进程*
-```
+
+```javascript
 process.on('SIGINT', () => {
     process.exit(0);
 });
@@ -86,7 +91,8 @@ process.on('SIGINT', () => {
 完整代码如下所示:
 
 *development.js*
-```
+
+```javascript
 'use strict'
 
 const path = require('path');

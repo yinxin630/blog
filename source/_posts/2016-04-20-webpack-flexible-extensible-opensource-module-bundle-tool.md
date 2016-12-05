@@ -97,13 +97,13 @@ $ npm install webpack --save-dev
 我们使用CommonJs语法定义一个JavaScript模块, 就像node.js那样:
 
 **cats.js**
-```
+```javascript
 var cats = ['dave', 'henry', 'martha'];
 module.exports = cats;
 ```
 
 **app.js**
-```
+```javascript
 cats = require('./cats.js');
 console.log(cats);
 ```
@@ -125,7 +125,7 @@ console.log(cats);
 webpack既可以通过命令行参数启动, 也可以选择直接从配置文件启动, 创建`webpack.config.js`配置文件, 添加如下内容:
 
 **webpack.config.js**
-```
+```javascript
 module.exports = {
     entry: './app.js',
     output: {
@@ -166,7 +166,7 @@ module.exports = {
 以css加载器为例, 安装加载器`npm install --save-dev style-loader css-loader`
 
 **style.css**
-```
+```css
 h1 {
     color: red;
 }
@@ -176,13 +176,13 @@ h2 {
 ```
 
 **app.js**
-```
+```javascript
 require('./style.css');
 console.log('app.js');
 ```
 
 **html.js**
-```
+```html
 <!doctype html5>
 <html>
 <head>
@@ -206,7 +206,7 @@ console.log('app.js');
 修改app.js:
 
 **app.js**
-```
+```javascript
 require('style!css!./style.css');
 console.log('app.js');
 ```
@@ -232,7 +232,7 @@ console.log('app.js');
 在webpack配置文件中添加`plugins`配置, 如下所示:
 
 **webpack.config.js**
-```
+```javascript
 var ComponentPlugin = require("component-webpack-plugin");
 module.exports = {
     plugins: [

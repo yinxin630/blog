@@ -17,7 +17,7 @@ featured: true
 
 在react native中, 编写如下代码:
 
-```
+```jsx
 <Image style={{ width: 100, height: 100 }} source={{ uri: 'http://x.xxx/x.gif' }}/>
 ```
 

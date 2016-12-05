@@ -19,7 +19,7 @@ lede: "由于JavaScript是一门异步语言，Node.js中的大量API都是异�
 
 假如我们有如下的数据库操作API：
 
-```
+```javascript
 // 模拟数据库数据
 const datas = [
     {
@@ -69,7 +69,7 @@ const DB = {
 
 异步回调代码如下：
 
-```
+```javascript
 (function () {
     DB.find({age: 1}, function(err, findResults) {
         if (err !== undefined || findResults.length === 0) {
@@ -92,7 +92,7 @@ const DB = {
 
 执行结果：
 
-```
+```javascript
 find datas success. [ { name: 'a', age: 1 }, { name: 'c', age: 1 } ]
 insert datas success. [ { name: 'a', age: 10 }, { name: 'c', age: 10 } ]
 ```
@@ -101,7 +101,7 @@ insert datas success. [ { name: 'a', age: 10 }, { name: 'c', age: 10 } ]
 
 但是，我们可以注意到，上述代码存在着如下形式的函数回调嵌套，当业务流程变得复杂的时候，回调嵌套的深度也会不断增加，于是就形成了恶魔金字塔。
 
-```
+```javascript
 function(
     {},
     function(
@@ -124,7 +124,7 @@ function(
 
 让我们先来看看如何使用Promise来解决这个问题，因为ES6标准定义了Promise，所以我们这里使用ES6原生的Promise实现。
 
-```
+```javascript
 // 将异步API包装成Promise
 const promiseFind = obj => {
     return new Promise((resolve, reject) => {
@@ -178,7 +178,7 @@ promiseFind(
 
 使用es6-promisify：
 
-```
+```javascript
 const Promisify = require('es6-promisify');
 
 Promisify(DB.find)(
@@ -216,7 +216,7 @@ Generator函数有多种理解角度。从语法上，首先可以把它理解�
 
 简单Generator函数：
 
-```
+```javascript
 function* rangeOneToThree() {
     yield 1;
     yield 2;
@@ -231,7 +231,7 @@ console.log(work.next());
 
 输出结果：
 
-```
+```javascript
 { value: 1, done: false }
 { value: 2, done: false }
 { value: 3, done: true }
@@ -245,7 +245,7 @@ Generator函数的调用方法与普通函数一样，也是在函数名后面�
 
 代码如下：
 
-```
+```javascript
 const Promisify = require('es6-promisify');
 
 const work = function* () {
@@ -268,11 +268,11 @@ const work = function* () {
 }();
 ```
 
-看起来感觉如何？是不是有种类似C/C++或者JAVA这些同步语言的感觉？我们可以使用类似`var result = yield call()`来调用异步函数获取结果，这不仅仅消除了异步嵌套金字塔，而且也使得业务流程更易读。不过，上面的Generator函数还不可以像同步语言那样简单的通过`work()`调用。
+是不是有种类似C/C++或者JAVA这些同步语言的感觉？我们可以使用类似`var result = yield call()`来调用异步函数获取结果，这不仅仅消除了异步嵌套金字塔，而且也使得业务流程更易读。不过，上面的Generator函数还不可以像同步语言那样简单的通过`work()`调用。
 
 下面是这个Generator的执行代码：
 
-```
+```javascript
 var nextResult0 = work.next().value;
 nextResult0.then(result => {
     var nextResult1 = work.next(result).value;
@@ -283,18 +283,7 @@ nextResult0.then(result => {
 });
 ```
 
-输出结果：
-
-```
-work.next().value.then(result => {
-    work.next(result).value.then(result => {
-        var endResult = work.next(result)
-        console.log('end.', endResult);
-    });
-});
-```
-
-怎么样？你是不是感觉Generator还需要编写执行代码而觉得无用？我们可以编写一个通用的Generator执行方法，本文不会讲解如何编写这个方法，得益于开源社区的力量，已经有了我们所需要的功能，它就是[CO][5]。（感兴趣的可以去查看CO代码，查看下它如何实现通用的Generator执行的）
+你是不是感觉Generator还需要编写执行代码而觉得无用？我们可以编写一个通用的Generator执行方法，本文不会讲解如何编写这个方法，得益于开源社区的力量，已经有了我们所需要的功能，它就是[CO][5]。（感兴趣的可以去查看CO代码，查看下它如何实现通用的Generator执行的）
 
 安装CO：`npm install --save co`
 
@@ -302,7 +291,7 @@ work.next().value.then(result => {
 
 代码如下：
 
-```
+```javascript
 const Promisify = require('es6-promisify');
 const CO = require('co');
 
@@ -328,7 +317,7 @@ CO(function* () {
 
 是不是看起来更舒服了？CO还可以并行执行异步调用，代码如下：
 
-```
+```javascript
 CO(function* () {
     var result = yield [
         asyncWork0,
@@ -344,7 +333,7 @@ CO(function* () {
 
 完整的代码如下：
 
-```
+```javascript
 // 模拟数据库数据
 const datas = [
     {

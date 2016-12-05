@@ -28,7 +28,7 @@ lede: "javascirpt中的Array和Object类型是引用类型, 在赋值时只会�
 
 ### 1. Number
 
-```
+```javascript
 function print (old, copy, s) {
     console.log(`${s} change`);
     console.log('old -->', old);
@@ -54,7 +54,7 @@ Number类型不会随着源对象修改而修改, 可以直接复制
 
 ### 2. String
 
-```
+```javascript
 function print (old, copy, s) {
     console.log(`${s} change`);
     console.log('old -->', old);
@@ -80,7 +80,7 @@ String类型在源对象赋值为新字符串时, 由于js中字符串不可修�
 
 ### 3. Boolean
 
-```
+```javascript
 function print (old, copy, s) {
     console.log(`${s} change`);
     console.log('old -->', old);
@@ -106,7 +106,7 @@ Boolean类型也和Number类型相同, 可以直接复制
 
 ### 4. Array
 
-```
+```javascript
 function print (old, copy, s) {
     console.log(`${s} change`);
     console.log('old -->', old);
@@ -131,7 +131,8 @@ print(old, copy, 'after');
 Array类型在修改源对象时复制对象也会变化, 因为它们指向的是同一块内存区域
 
 深复制版本:
-```
+
+```javascript
 function print (old, copy, s) {
     console.log(`${s} change`);
     console.log('old -->', old);
@@ -158,7 +159,7 @@ print(old, copy, 'after');
 
 ### 5. Object
 
-```
+```javascript
 function print (old, copy, s) {
     console.log(`${s} change`);
     console.log('old -->', old);
@@ -183,7 +184,8 @@ print(old, copy, 'after');
 Object类型自然也需要深度复制
 
 深复制版本:
-```
+
+```javascript
 function print (old, copy, s) {
     console.log(`${s} change`);
     console.log('old -->', old);
@@ -222,7 +224,7 @@ print(old, copy, 'after');
 
 ### 6. Function
 
-```
+```javascript
 function print (old, copy, s) {
     console.log(`${s} change`);
     console.log('old -->', old);
@@ -248,7 +250,7 @@ Function类型与String类型类似, 为不可变量, 只能创建新Function对
 
 ### 7. Date
 
-```
+```javascript
 function print (old, copy, s) {
     console.log(`${s} change`);
     console.log('old -->', old.getTime());
@@ -273,7 +275,8 @@ print(old, copy, 'after');
 Date类型也属于Object类型, 需要深度复制
 
 深复制版本:
-```
+
+```javascript
 function print (old, copy, s) {
     console.log(`${s} change`);
     console.log('old -->', old.getTime());

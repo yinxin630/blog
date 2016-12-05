@@ -24,7 +24,7 @@ lede: "这篇教程将指导你如何使用tap测试你的node.js程序。"
 
 接下来，更新你的package.json文件，使得`npm test`调用tap：
 
-```
+```javascript
 {
   "name": "node-tap-demo",
   "version": "1.0.0",
@@ -56,7 +56,7 @@ tap的顶级对象是tap的Test类的一个成员，这意味着子测试有着�
 
 这是一个非常基础的测试代码：
 
-```
+```javascript
 // test/basic.js
 var tap = require('tap');
 tap.pass('this is fine');
@@ -98,7 +98,7 @@ total ................................................. 1/1
 
 我们来创建一个模块用了test，假如我们有这样一个功能，当数字是偶数是返回`even`，当数字是奇数时返回`odd`，如果数字大于100返回`big`，如果数字小于0返回`negative`。
 
-```
+```javascript
 // src/number.js
 module.exports = function (x) {
     if (x % 2 === 0) {
@@ -117,7 +117,7 @@ module.exports = function (x) {
 
 现在，我们创建一个测试文件，引入`number.js`，核实结果：
 
-```
+```javascript
 // test/basic.js
 var tap = require('tap');
 var number = require('../src/number.js');
@@ -173,7 +173,7 @@ All files   |    55.56 |     37.5 |      100 |    55.56 |                |
 
 好的，添加更多的测试：
 
-```
+```javascript
 // src/number.js
 var tap = require('tap');
 var number = require('../src/number.js');
@@ -234,7 +234,7 @@ npm ERR! Test failed.  See above for more details.
 
 更新我们的代码，使得我们的测试能够通过：
 
-```
+```javascript
 // src/number.js
 module.exports = function (x) {
     if (x > 100) {
@@ -282,7 +282,7 @@ All files   |      100 |     87.5 |      100 |      100 |                |
 
 你可以在子测试对象完成时调用`.end()`函数。
 
-```
+```javascript
 // test/async.js
 // this is a silly test.
 var tap = require('tap')

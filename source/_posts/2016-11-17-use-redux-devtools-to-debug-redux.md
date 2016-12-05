@@ -42,7 +42,7 @@ lede: "redux-devtool是一个有效的调试redux的配套工具, 可以显示ac
     * `npm install remotedev-server`
     * 添加如下代码并运行 
 
-        ```
+        ```javascript
         var remotedev = require('remotedev-server'); 
         remotedev({ hostname: 'localhost', port: 8000 });
         ```

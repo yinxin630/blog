@@ -13,7 +13,7 @@ lede: "javascript原生并没有在语法提供继承的能力, 但是是基于�
 
 
 0. 工厂模式
-    ```
+    ```javascript
     function createPerson(name, age) {
         var person = new Object();
         person.name = name;
@@ -29,7 +29,7 @@ lede: "javascript原生并没有在语法提供继承的能力, 但是是基于�
     工厂模式为创建大量同类对象提供了方便, 但是有着对象识别的问题, 即怎么知道一个对象的类型.
 
 1. 构造函数模式
-    ```
+    ```javascript
     function Person(name, age) {
         this.name = name;
         this.age = age;
@@ -43,7 +43,7 @@ lede: "javascript原生并没有在语法提供继承的能力, 但是是基于�
     构造函数模式创建的对象共用相同的构造函数(constructor), 可以使用instanceof操作判断类型. 需要通过new操作符创建对象, 否则this会指向全局作用域. 构造函数中定义的对象方法是不同的Function实例, 即`person1.sayName !== person2.sayName`. 可以将sayName定义在全局, 然后在构造函数中使用 `this.sayName = sayName`, 这样子每个对象实例会共享方法, 但是同时在全局作用域留下了额外的函数.
 
 2. 原型模式
-    ```
+    ```javascript
     function Person() { }
     Person.prototype.name = 'a';
     Person.prototype.age = 11;
@@ -56,7 +56,7 @@ lede: "javascript原生并没有在语法提供继承的能力, 但是是基于�
     原型模式中定义属性会被所有实例共享, 修改`person1.name`不会影响`person2.name`的值, 但是修改`Person.prototype.name`会影响所有Person对象实例.
 
 3. 简化的原型模式
-    ```
+    ```javascript
     function Person() { }
     Person.prototype = {
         name: 'a',
@@ -71,7 +71,7 @@ lede: "javascript原生并没有在语法提供继承的能力, 但是是基于�
     简化的原型模式可以省去每次都要敲一遍的Person.prototype, 但是constructor不再指向Person的constructor了. 可以添加额外属性`constructor: Person.constructor`使其构造constructor仍指向Person的constructor. 但是此时的constructor是可枚举的, 而原来的constructor并不可枚举.
 
 4. 组合使用构造函数模式和原型模式
-    ```
+    ```javascript
     function Person(name, age) {
         this.name = name;
         this.age = age;

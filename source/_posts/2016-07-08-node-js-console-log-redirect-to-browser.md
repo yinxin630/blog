@@ -28,7 +28,7 @@ featured: true
 
 在你的程序入口添加如下代码:
 
-```
+```javascript
 require('node-monkey').start()
 ```
 
@@ -58,7 +58,7 @@ To inspect output, open a browser to: http://127.0.0.1:50500
 
 在上述所添加的代码下方加上如下代码:
 
-```
+```javascript
 require("opener")('http://127.0.0.1:50500');
 ```
 

@@ -42,7 +42,7 @@ strman是小巧的, 无任何依赖的string操作库, 前后端通用, 同时�
 
 4. 创建重复字符串 - String.prototype.repeat(str, count)
 
-    ```
+    ```javascript
     let result = '*'.repeat(5);
     // result => '*****'
     ```
