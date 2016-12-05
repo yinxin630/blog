@@ -2,7 +2,7 @@
 layout: post
 author: 碎碎酱
 title: pm2设置程序的运行环境
-permalink: blog-introduce
+permalink: pm2-set-application-node-env
 date: 2016-09-28
 thumbnail: /img/linux-logo.jpg
 category: sorfware
