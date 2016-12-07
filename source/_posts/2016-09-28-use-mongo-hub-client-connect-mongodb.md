@@ -2,7 +2,7 @@
 layout: post
 author: 碎碎酱
 title: MAC中使用MongoHub客户端连接远程mongoDB数据库
-permalink: blog-introduce
+permalink: use-mongo-hub-client-connect-mongodb
 date: 2016-09-28
 thumbnail: /img/mongodb-logo.jpg
 category: software
