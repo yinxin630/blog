@@ -7,7 +7,7 @@ date: 2016-12-13
 thumbnail: /img/react-native-logo.png
 category: react native
 tags:
-- react native
+- react-native
 - ios
 lede: "react native项目中启动ios报错, 报错信息为 ** BUILD FAILED ** CompileC RCTSRWebSocket.o (1 failure), 解决办法为"
 ---
