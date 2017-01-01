@@ -5,7 +5,7 @@ title: react native ios 构建失败, 报错为 ** BUILD FAILED ** CompileC RCTS
 permalink: react-native-ios-build-failed-reactsrwebsocket
 date: 2016-12-13
 thumbnail: /img/react-native-logo.png
-category: react native
+category: react-native
 tags:
 - react-native
 - ios
