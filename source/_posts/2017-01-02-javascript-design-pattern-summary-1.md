@@ -112,12 +112,102 @@ class ItemList {
 }
 
 const itemList = new ItemList();
-let a = 0;
-while(a = itemList.next1()) {
-    console.log(a);
+for (let item = itemList.next1(); item; item = itemList.next1()) {
+    console.log(item);
 }
-a = 0;
-while(a = itemList.next2()) {
-    console.log(a);
+for (let item = itemList.next2(); item; item = itemList.next2()) {
+    console.log(item);
 }
 ```
+
+## (5) 发布-订阅模式
+
+发布-订阅模式又叫观察者模式, 用于解耦一对多的状态依赖问题, 当对象的状态发生改变时, 所有依赖它(订阅了该事件)的对象都将得到通知
+
+```javascript
+class Eventer {
+    constructor() {
+        this.events = {};
+    }
+    register(event, handler) {
+        if (Array.isArray(this.events[event])) {
+            this.events[event].push(handler);
+        } else {
+            this.events[event] = [ handler ];
+        }
+    }
+    emit(event) {
+        if (this.events[event]) {
+            for (const handler of this.events[event]) {
+                handler();
+            }
+        }
+    }
+}
+
+const eventer = new Eventer();
+eventer.register('event1', () => console.log('event1的第1个回调'));
+eventer.register('event1', () => console.log('event1的第2个回调'));
+eventer.register('event2', () => console.log('event2的第1个回调'));
+
+eventer.emit('event1');
+eventer.emit('event2');
+```
+
+## (6) 命令模式
+
+命令模式用于将命令发起者和命令执行者解耦, javascript中回调函数的形式是一种隐形的命令模式.
+
+```javascript
+class Diner {
+    constructor() {
+        this.onEat = null;
+        this.onDrink = null;
+    }
+    eat() {
+        this.onEat && this.onEat();
+    }
+    drink() {
+        this.onDrink && this.onDrink();
+    }
+}
+class Restaurant {
+    handleEat() {
+        console.log('洗菜\n炒菜\n上菜');
+    }
+    handleDrink() {
+        console.log('开瓶盖\n上酒');
+    }
+}
+
+const diner = new Diner();
+const restaurant = new Restaurant();
+diner.onEat = restaurant.handleEat();
+diner.onDrink = restaurant.handleDrink();
+
+diner.eat();
+diner.drink();
+```
+
+## (7) 组合模式
+
+将多个子任务组合成新的的任务, 新任务与子任务有着相同的接口, 新任务可再用于组合成其它任务
+
+```javascript
+const eat = { do: () => console.log('吃') };
+const drink = { do: () => console.log('喝') };
+const teeth = { do: () => console.log('剔牙') };
+const lunch = { do: () => {
+    eat.do();
+    drink.do();
+    teeth.do();
+} };
+
+function doSomething(thing) {
+    thing.do();
+}
+doSomething(eat);
+doSomething(drink);
+doSomething(lunch);
+```
+
