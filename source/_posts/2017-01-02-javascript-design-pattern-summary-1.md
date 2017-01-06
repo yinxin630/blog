@@ -211,3 +211,34 @@ doSomething(drink);
 doSomething(lunch);
 ```
 
+## (8) 职责链模式
+
+使多个对象均有机会处理请求, 弱化请求发送者和接收者的耦合关系. 职责链可以处理一次即中止, 也可以让每个接收者都有一次可处理的机会.
+
+```javascript
+const handlers = [
+    (context) => {
+        if (context.type === 'text') {
+            console.log('我能处理 text 类型');
+        }
+    },
+    (context) => {
+        if (context.type === 'image') {
+            console.log('我能处理 image 类型');
+        }
+    },
+    (context) => {
+        if (context.type === 'video') {
+            console.log('我能处理 video 类型');
+        }
+    }
+];
+function executeResponsibilityChain(context) {
+    for(const handler of handlers) {
+        handler(context);
+    }
+}
+
+executeResponsibilityChain({ type: 'text' });
+executeResponsibilityChain({ type: 'video' });
+```
