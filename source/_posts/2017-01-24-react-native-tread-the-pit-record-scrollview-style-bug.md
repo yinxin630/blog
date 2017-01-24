@@ -16,10 +16,10 @@ lede: "react-native直接在ScrollView上应用样式时, 可能会导致些奇�
 在app中, 初次进入该页面时, 视图能占满屏幕, 而切换到别的tab页再切回来的时候, 视图上分多出20px的空白区域.
 
 初次进入, 页面占满屏幕:
-![2017-01-24-react-native-tread-the-pit-record-scrollview-style-bug-01.png](/img/2017-01-24-react-native-tread-the-pit-record-scrollview-style-bug-01.png)
+<img src="/img/2017-01-24-react-native-tread-the-pit-record-scrollview-style-bug-01.png" alt="正常情况" style="max-width: 400px">
 
 从别的tab页回来, 页面下移一段距离:
-![2017-01-24-react-native-tread-the-pit-record-scrollview-style-bug-02.png](/img/2017-01-24-react-native-tread-the-pit-record-scrollview-style-bug-02.png)
+<img src="/img/2017-01-24-react-native-tread-the-pit-record-scrollview-style-bug-02.png" alt="非正常情况" style="max-width: 400px">
 
 因为所有页面有一个公共的顶层View, 为了让出状态栏的空间, 该View包含`padding: 20`属性, 而真人秀页面的顶层容器是一个ScrollView, 并且为了占满屏幕, 添加了`marginTop: -20`属性. 同时还有另一模块也是要占满屏幕, 同样设置了`marginTop: -20`, 但是这个模块就没有切换后下移的问题.
 
