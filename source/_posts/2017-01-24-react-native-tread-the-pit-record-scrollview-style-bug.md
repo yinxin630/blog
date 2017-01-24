@@ -8,7 +8,7 @@ thumbnail: /img/react-native-logo.png
 category: react-native
 tags:
 - react-native
-lede: ""
+lede: "react-native直接在ScrollView上应用样式时, 可能会导致些奇怪的问题"
 ---
 
 ## BUG表现
