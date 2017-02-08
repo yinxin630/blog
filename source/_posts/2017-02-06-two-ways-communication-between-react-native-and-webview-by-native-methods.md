@@ -8,7 +8,7 @@ thumbnail: /img/react-native-logo.png
 category: react-native
 tags:
 - react-native
-lede: "react-native直接在ScrollView上应用样式时, 可能会导致些奇怪的问题"
+lede: "react native的WebView组件在v0.37版本之前, 并没有与react native通讯的方法, 我们通常使用react-native-webview-bridge这个组件来实现双端通讯, 奈何react native版本更新飞快, 而该组件的作者通常并不能及时跟进升级, 给项目的进展造成了很多麻烦."
 ---
 
 react native的WebView组件在`v0.37`版本之前, 并没有与react native通讯的方法, 我们通常使用[react-native-webview-bridge](https://github.com/alinz/react-native-webview-bridge)这个组件来实现双端通讯, 奈何react native版本更新飞快, 而该组件的作者通常并不能及时跟进升级, 给项目的进展造成了很多麻烦.
