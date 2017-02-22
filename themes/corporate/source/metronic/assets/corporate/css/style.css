@@ -732,13 +732,13 @@ body.page-header-fixed {
 .header-navigation .search-box {
 	right: -7px;
 	top: 100%;
-	padding: 15px;
+	padding: 15px 0;
 	display: none;
 	background: #fcfafb;
 	position: absolute;
 	border-top: solid 2px #ea4c1d;
 	box-shadow: 5px 5px rgba(91, 91, 91, 0.2);
-	width: 274px;
+	width: 300px;
 	margin-top: 0;
 	z-index: 22;
 }
