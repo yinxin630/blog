@@ -855,7 +855,7 @@ hexo-util@^0.6.0:
     html-entities "^1.2.0"
     striptags "^2.1.1"
 
-hexo@^3.2.2:
+hexo@^3.2.0:
   version "3.2.2"
   resolved "http://registry.npm.taobao.org/hexo/download/hexo-3.2.2.tgz#9b8e7022aec95e02021cec140afd7888d4ceb931"
   dependencies:
