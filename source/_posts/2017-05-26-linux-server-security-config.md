@@ -4,7 +4,7 @@ author: 碎碎酱
 title: linux服务器安全性配置
 permalink: linux-server-security-config
 date: 2017-05-26
-thumbnail: /img/linux-logo.png
+thumbnail: /img/linux-logo.jpg
 category: linux
 tags:
 - linux
