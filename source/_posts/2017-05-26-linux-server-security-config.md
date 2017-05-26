@@ -8,7 +8,7 @@ thumbnail: /img/linux-logo.jpg
 category: linux
 tags:
 - linux
-lede: ""
+lede: "近来服务器受到多次攻击, 导致数据库数据丢失, 因此决定升级系统并重新配置各项应用. 本文记录了一些服务器安全性配置, 以及一些常用软件配置."
 ---
 
 以下配置在 Ubuntu 16.04 中可以使用, 其它系统需要根据实际情况调整.

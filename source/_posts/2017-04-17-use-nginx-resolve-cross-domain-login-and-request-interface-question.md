@@ -9,7 +9,7 @@ category: linux
 tags:
 - nginx
 - linux
-lede: ""
+lede: "开发时, 我们通常从本地启动应用, 并访问非本机的后端接口, 因为会触发浏览器跨域限制"
 ---
 
 在开发的时候, 我们通常在本地启动打包服务, 比如使用 `webpac-dev-server` 时我们从 `http://localhost:8080` 访问, 由于此时的域为 `localhost:8080`, 而后端接口的域为 `xxx.com:80`, 同时登录需要跳转到登录页, 登录后会在 `xxx.com:80` 域注入cookie, 但是 `localhost:8080` 并没有该cookie, 因此无法进入登录状态.
