@@ -129,6 +129,41 @@ server {
 }
 ```
 
+### sendmail
+
+安装 sendmail
+```
+sudo apt-get install sendmail  
+sudo apt-get install sendmail-cf
+```
+
+如果 mail 命令不存在, 安装 mailutils
+```
+sudo apt-get install mailutils
+```
+
+查看是否启动
+```
+ps aux | grep sendmail
+```
+
+编辑配置文件, `sudo vim /etc/mail/sendmail.mc`
+修改监听地址, `DAEMON_OPTIONS('Family=inet,  Name=MTA-v4, Port=smtp, Addr=0.0.0.0')dnl</span>`
+
+如果提示 hostname 不合格, 修改它
+```
+查看 hostname `hostname`
+修改 hostname `hostname [新值]`
+```
+
+发送邮件
+```
+mail [邮箱地址]
+主题
+内容
+Ctrl-D结束
+```
+
 ### vim
 ```
 syntax on  
