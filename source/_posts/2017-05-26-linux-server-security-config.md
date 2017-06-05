@@ -70,7 +70,7 @@ db.createUser(
    {
      user: "[用户名]",
      pwd: "[密码]",
-     roles: [ { role: "userAdminAnyDatabase", db: "admin" } ]
+     roles: [ { role: "root", db: "admin" } ]
    }
 )
 # 创建拥有指定数据库权限的用户
@@ -82,6 +82,30 @@ db.createUser(
      roles: [ { role: "readWrite", db: "[数据库名]" } ]
    }
 )
+```
+
+备份/恢复:
+
+备份: `> mongodump -h dbhost -d dbname -o dbdirectory `
+恢复: `> mongorestore -h <hostname><:port> -d dbname <path>`
+
+创建备份脚本, 利用cron自动每日执行
+```bash
+#!/bin/sh
+DUMP=mongodump #mongodump备份文件路径
+OUT_DIR=./temp #临时备份目录
+TAR_DIR=./backup #备份存放路径
+DATE=`date +%Y_%m_%d` #获取当前系统时间
+DB_USER="username" #数据库账号
+DB_PASS="password" #数据库密码
+DAYS=7 #DAYS=7代表删除7天前的备份，即只保留最近7天的备份
+TAR_BAK="mongodb_backup_$DATE.tar.gz" #最终保存的数据库备份文件名
+cd $OUT_DIR
+rm -rf $OUT_DIR/*
+mkdir -p $OUT_DIR/$DATE
+$DUMP --host=127.0.0.1 --port=27017 -u $DB_USER -p $DB_PASS -o $OUT_DIR/$DATE #备份全部数据库
+tar -zcvf $TAR_DIR/$TAR_BAK $OUT_DIR/$DATE #压缩为.tar.gz格式
+find $TAR_DIR/ -mtime +$DAYS -delete #删除7天前的备份文件
 ```
 
 ## 常用配置
