@@ -190,7 +190,7 @@ Ctrl-D结束
 
 ### vim
 ```
-syntax on  
+syntax on
 set showmatch  
 set nu  
 set tabstop=4  
@@ -206,10 +206,7 @@ set selection=exclusive
 set selectmode=mouse,key  
 set formatoptions=tcrqn  
 set autoindent  
-autocmd BufReadPost *  
-  \ if line("'\"") > 0 && line("'\"") <= line("$") |  
-  \   exe "normal! g`\"" |  
-  \ endif  
+au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|else|exe "norm $"|endif|endif
 set showcmd  
 colorscheme desert   
 syntax enable   
