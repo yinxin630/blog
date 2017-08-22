@@ -3,7 +3,7 @@ layout: post
 author: 碎碎酱
 title: JS模块规范区别(CommonJS,AMD,CMD,UMD,ES6)
 permalink: javascript-module-standard-difference
-date: 2017-06-30
+date: 2017-08-14
 thumbnail: /img/javascript-logo.png
 category: javascript
 tags:
