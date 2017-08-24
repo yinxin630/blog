@@ -1,10 +1,10 @@
 ---
 layout: post
 author: 碎碎酱
-title: react-redux 源码分析
+title: react-redux 原理分析
 permalink: react-redux-source-code-analyse
 date: 2017-08-23
-thumbnail: /img/react-logo.png
+thumbnail: /img/react-logo.jpg
 category: react
 tags:
 - javascript
