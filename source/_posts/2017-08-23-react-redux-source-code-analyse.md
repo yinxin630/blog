@@ -25,7 +25,7 @@ tags:
 
 ## src/components/Provider.js
 
-该文件定义了 `createProvider` 函数(22行), 创建默认 Provider 组件(60行)
+该文件定义了 `createProvider` 函数(22行), 并创建默认 Provider 组件(60行)
 
 ```js
 export function createProvider(storeKey = 'store', subKey) {
@@ -52,25 +52,160 @@ class Provider extends Component {
         return Children.only(this.props.children)
     }
 }
+```
+`Provider` 组件将 store 保存在 this 中, 渲染 children 中的第一个组件, 在 context 中返回 store 和空的 subscription, connected 组件将通过 context 获取 store
 
-if (process.env.NODE_ENV !== 'production') {
-    Provider.prototype.componentWillReceiveProps = function (nextProps) {
-    if (this[storeKey] !== nextProps.store) {
-        warnAboutReceivingStore()
-    }
-    }
-}
+## src/components/connectAdvanced.js
 
-Provider.propTypes = {
-    store: storeShape.isRequired,
-    children: PropTypes.element.isRequired,
-}
-Provider.childContextTypes = {
-    [storeKey]: storeShape.isRequired,
-    [subscriptionKey]: subscriptionShape,
+该文件定义了 `connectAdvanced` 函数(40行)
+
+```js
+export default function connectAdvanced(
+    selectorFactory,
+    {
+        getDisplayName = name => `ConnectAdvanced(${name})`,
+        methodName = 'connectAdvanced',
+        renderCountProp = undefined,
+        shouldHandleStateChanges = true,
+        storeKey = 'store',
+        withRef = false,
+        ...connectOptions
+    } = {},
+) {
+    return function wrapWithConnect(WrappedComponent) { }
 }
 ```
-`Provider` 组件将 store 实例保存在 this 中, 渲染 children 中的第一个组件, 在 context 中返回 store 实例给子组件
+`connectAdvanced` 的第一个参数是一个生成选择器的函数, 格式为 `(dispatch, options) => (state, props) => ({ key: value })`, 选择器决定了最终我们传递给 connected 组件的 props. 第二参数是一个对象, `getDisplayName` 与包装组件 displayName 相关, `renderCountProp` 如果设置为字符串, 会将包装组件渲染次数以它的值为 key 传到到被包装组件 props, `shouldHandleStateChanges` 决定组件是否响应 state 变化, `withRef` 决定组件是否提供接口用于获取被包装组件实例. `connectAdvanced` 返回了一个包装函数 `wrapWithConnect`, 该函数接受被包装组件为参数, 返回包装后的组件.
+
+### wrapWithConnect
+
+```js
+function wrapWithConnect(WrappedComponent) {
+    const wrappedComponentName = WrappedComponent.displayName ||
+        WrappedComponent.name ||
+        'Component';
+    const displayName = getDisplayName(wrappedComponentName);
+    const selectorFactoryOptions = {
+        ...connectOptions,
+        getDisplayName,
+        methodName,
+        renderCountProp,
+        shouldHandleStateChanges,
+        storeKey,
+        withRef,
+        displayName,
+        wrappedComponentName,
+        WrappedComponent,
+    };
+    class Connect extends Component {}
+    Connect.WrappedComponent = WrappedComponent;
+    Connect.displayName = displayName;
+    Connect.childContextTypes = childContextTypes;
+    Connect.contextTypes = contextTypes;
+    Connect.propTypes = contextTypes;
+    return hoistStatics(Connect, WrappedComponent);
+};
+```
+
+`wrapWithConnect` 内定义了 `Connect` 组件, 并将 WrappedComponent 的静态方法复制到了 Connect 中. 我们重点关注 `Connect` 组件的定义
+
+### Connect 组件
+
+```js
+class Connect extends Component {
+    constructor(props, context) {
+        super(props, context);
+
+        this.version = version;
+        this.state = {};
+        this.renderCount = 0;
+        this.store = props[storeKey] || context[storeKey];
+        this.propsMode = Boolean(props[storeKey]);
+        this.setWrappedInstance = this.setWrappedInstance.bind(this);
+
+        this.initSelector();
+        this.initSubscription();
+    }
+    getChildContext() {
+        const subscription = this.propsMode ? null : this.subscription;
+        return {
+            [subscriptionKey]: subscription || this.context[subscriptionKey],
+        };
+    }
+    componentDidMount() {
+        if (!shouldHandleStateChanges) return;
+        this.subscription.trySubscribe();
+        this.selector.run(this.props);
+        if (this.selector.shouldComponentUpdate) this.forceUpdate();
+    }
+    componentWillReceiveProps(nextProps) {
+        this.selector.run(nextProps);
+    }
+    shouldComponentUpdate() {
+        return this.selector.shouldComponentUpdate;
+    }
+    componentWillUnmount() {
+        if (this.subscription) this.subscription.tryUnsubscribe();
+        this.subscription = null;
+        this.notifyNestedSubs = noop;
+        this.store = null;
+        this.selector.run = noop;
+        this.selector.shouldComponentUpdate = false;
+    }
+    getWrappedInstance() {
+        return this.wrappedInstance;
+    }
+    setWrappedInstance(ref) {
+        this.wrappedInstance = ref;
+    }
+    initSelector() {
+        const sourceSelector = selectorFactory(this.store.dispatch, selectorFactoryOptions);
+        this.selector = makeSelectorStateful(sourceSelector, this.store);
+        this.selector.run(this.props);
+    }
+    initSubscription() {
+        if (!shouldHandleStateChanges) return;
+        const parentSub = (this.propsMode ? this.props : this.context)[subscriptionKey];
+        this.subscription = new Subscription(this.store, parentSub, this.onStateChange.bind(this));
+        this.notifyNestedSubs = this.subscription.notifyNestedSubs.bind(this.subscription);
+    }
+    onStateChange() {
+        this.selector.run(this.props);
+        if (!this.selector.shouldComponentUpdate) {
+            this.notifyNestedSubs();
+        } else {
+            this.componentDidUpdate = this.notifyNestedSubsOnComponentDidUpdate;
+            this.setState(dummyState);
+        }
+    }
+    notifyNestedSubsOnComponentDidUpdate() {
+        this.componentDidUpdate = undefined;
+        this.notifyNestedSubs();
+    }
+    isSubscribed() {
+        return Boolean(this.subscription) && this.subscription.isSubscribed();
+    }
+    addExtraProps(props) {
+        if (!withRef && !renderCountProp && !(this.propsMode && this.subscription)) return props;
+        const withExtras = { ...props,
+        };
+        if (withRef) withExtras.ref = this.setWrappedInstance;
+        if (renderCountProp) withExtras[renderCountProp] = this.renderCount++;
+        if (this.propsMode && this.subscription) withExtras[subscriptionKey] = this.subscription;
+        return withExtras;
+    }
+    render() {
+        const selector = this.selector;
+        selector.shouldComponentUpdate = false;
+
+        if (selector.error) {
+            throw selector.error;
+        } else {
+            return createElement(WrappedComponent, this.addExtraProps(selector.props));
+        }
+    }
+}
+```
 
 ## src/connect/connect.js
 
