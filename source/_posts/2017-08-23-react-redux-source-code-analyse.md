@@ -48,4 +48,4 @@ tags:
 
 ## createProvider
 
-* `createProvider` 用于生成自定义 Provider 组件, 与 Provider 组件的区别是它允许你控制 store 在 context 中的 key 值, 在 Provide 中 key 的值为 "store". 你仅在存在多 store 时会需要它, 但多 store 是不被推荐的做法
+`createProvider` 用于生成自定义 Provider 组件, 与 Provider 组件的区别是它允许你控制 store 在 context 中的 key 值, 在 Provide 中 key 的值为 "store". 你仅在存在多 store 时会需要它, 但多 store 是不被推荐的做法
