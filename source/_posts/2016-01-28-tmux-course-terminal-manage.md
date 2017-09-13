@@ -86,6 +86,34 @@ prefix {                swap-pane -U
 prefix }                swap-pane -D
 ```
 
+## tmux 我的配置
+
+```
+set -g prefix C-a
+unbind C-b
+set -g mouse on
+
+# List of plugins
+set -g @plugin 'tmux-plugins/tpm'
+set -g @plugin 'tmux-plugins/tmux-sensible'
+set -g @plugin 'tmux-plugins/tmux-resurrect'
+set -g @plugin 'tmux-plugins/tmux-yank'
+
+# Other examples:
+# set -g @plugin 'github_username/plugin_name'
+# set -g @plugin 'git@github.com/user/plugin'
+# set -g @plugin 'git@bitbucket.com/user/plugin'
+
+# Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
+run '~/.tmux/plugins/tpm/tpm'
+```
+
+* 需要先安装 [tpm](https://github.com/tmux-plugins) 插件管理器
+* 修改配置文件为上述内容
+* 使配置生效 `tmux source-file ~/.tmux.conf`
+* 获取插件, prefix + I (注意大写)
+* [yank](https://github.com/tmux-plugins/tmux-yank) 插件需要些额外配置
+
 ## tmux实用工具：Tmuxinator
 
 假如你需要经常创建tmux会话，它包含三个窗格：vim、debug和shell，并且每个窗格需要不同的大小。又或者，你又临时投入另一项工作，需要打开多个终端。你可能会想，如果仅需一条命令就可以做的该多好，好的，tmuxinator出场了。
