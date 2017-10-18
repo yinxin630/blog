@@ -4,7 +4,7 @@ author: 碎碎酱
 title: 如何调试低版本安卓原生浏览器
 permalink: how-to-debug-low-version-android-native-browser
 date: 2016-10-25
-thumbnail: /img/android-logo.jpg
+thumbnail: /img/android-logo.png
 category: android
 tags:
 - android

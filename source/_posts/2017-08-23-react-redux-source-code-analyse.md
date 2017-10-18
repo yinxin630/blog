@@ -4,7 +4,7 @@ author: 碎碎酱
 title: react-redux 原理分析
 permalink: react-redux-source-code-analyse
 date: 2017-08-23
-thumbnail: /img/react-logo.jpg
+thumbnail: /img/react-logo.png
 category: react
 tags:
 - javascript
