@@ -3,12 +3,13 @@ layout: post
 author: 碎碎酱
 title: 关于setTimeout / setImmediate / process.nextTick的区别
 permalink: setTimeout-setImmediate-process.nextTick-difference
-date: 2017-08-19
+date: 2017-08-09
 thumbnail: /img/nodejs-logo.png
 category: node.js
 tags:
 - node.js
 - javascript
+lede: 常见面试题, setTimeout / setImmediate / process.nextTick的区别, 并说出代码执行顺序
 ---
 
 有这样一道面试题, 阅读如下代码, 请说出输出顺序

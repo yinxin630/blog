@@ -8,6 +8,7 @@ thumbnail: /img/javascript-logo.png
 category: javascript
 tags:
 - javascript
+lede: JS模块规范区别(CommonJS, AMD, CMD, UMD, ES6)
 ---
 
 ## CommonJS

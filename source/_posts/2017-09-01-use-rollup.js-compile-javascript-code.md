@@ -9,6 +9,7 @@ category: javascript
 tags:
 - javascript
 - rollup
+lede: rollup 是一款小巧的 JavaScript 打包工具, 它更适合用作库应用的构建工具
 ---
 
 rollup 是一款小巧的 JavaScript 打包工具, 它更适合用作库应用的构建工具

@@ -10,6 +10,8 @@ tags:
 - javascript
 - react
 - redux
+lede: 探究 react-redux 源码, 解密 Provide 和 connect 到底做了什么
+featured: true
 ---
 
 `react-redux` 的当前最新版本为 `v5.0.6`, 本文将会以该版本进行分析
