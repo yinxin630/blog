@@ -16,6 +16,7 @@ lede: 部分浏览器(webview)不支持HTML5新增的Blob, 会抛出异常TypeEr
 
 封装后的方法如下:
 ```js
+window.BlobBuilder = window.BlobBuilder || window.WebKitBlobBuilder || window.MozBlobBuilder || window.MSBlobBuilder;
 function getBlob(svg) {
     let blob = null;
     try {
