@@ -40,6 +40,13 @@ sudo ufw disable 禁用ufw
 sudo ufw enable 启用ufw
 ```
 
+### iptables
+
+```
+iptables -I INPUT -s *.*.*.* -j DROP 封停ip
+iptables -D INPUT -s *.*.*.* -j DROP 解封ip
+```
+
 ### logwatch
 
 * 安装logwatch `apt-get install logwatch`
