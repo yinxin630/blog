@@ -8,7 +8,7 @@ thumbnail: /img/javascript-logo.png
 category: javascript
 tags:
 - javascript
-lede: 
+lede: 移动端设备繁多, 性能良莠不齐, 在这种场景下如何解决巨量座位绘制呢
 ---
 
 ## 明确选座需求

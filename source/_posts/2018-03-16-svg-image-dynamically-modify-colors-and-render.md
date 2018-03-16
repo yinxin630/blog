@@ -8,7 +8,7 @@ thumbnail: /img/javascript-logo.png
 category: javascript
 tags:
 - javascript
-lede: 
+lede: 动态生成svg字符串, 并将其转为Image对象
 ---
 
 SVG全称为Scalable Vector Graphics, 意思为可缩放的矢量图形, 它是基于XML语言描述的. 下面是由UI同学导出的svg座位图的代码
