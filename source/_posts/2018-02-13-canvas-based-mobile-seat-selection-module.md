@@ -91,7 +91,7 @@ canvas是HTML5标准的一部分, 它就像一张"画布", 提供了一套JavaSc
 
 #### 下面是在iPhone7真机运行视频:
 
-<video style="width: 375px;height: 667px;margin: 0 auto" src="https://lark.alipay.com/attachments/2018/mp4/17cbde4d-9903-492f-8eb3-a50d45a08398.mp4" controls="" preload="true" autoplay="true"></video>
+<video style="width: 375px;height: 667px;margin: 0 auto" src="https://cdn.suisuijiang.com/select-seat-1.mp4" controls="" preload="true" autoplay="true"></video>
 
 #### 使用Chrome Devtool分析页面性能消耗, 入下图所示:
 
@@ -112,7 +112,7 @@ canvas是HTML5标准的一部分, 它就像一张"画布", 提供了一套JavaSc
 
 #### 优化后在iPhone7上运行效果如下:
 
-<video style="width: 375px;height: 667px;margin: 0 auto" src="https://lark.alipay.com/attachments/2018/mp4/dc149f6a-1a00-4a34-9460-3c2c6a8f9fed.mp4" controls="" preload="true" autoplay="true"></video>
+<video style="width: 375px;height: 667px;margin: 0 auto" src="https://cdn.suisuijiang.com/select-seat-2.mp4" controls="" preload="true" autoplay="true"></video>
 
 经过优化后, 每次拖动操作仅在结束时重绘一次. 在移动端实际体验时, 又遇到了几个问题:
 
@@ -137,7 +137,7 @@ canvas是HTML5标准的一部分, 它就像一张"画布", 提供了一套JavaSc
 
 #### 重构后在iPhone7上运行效果如下:
 
-<video style="width: 375px;height: 667px;margin: 0 auto" src="https://lark.alipay.com/attachments/2018/mp4/6b1f3191-8b65-44dd-9757-8f55e5e891d6.mp4" controls="" preload="true" autoplay="true"></video>
+<video style="width: 375px;height: 667px;margin: 0 auto" src="https://cdn.suisuijiang.com/select-seat-3.mp4" controls="" preload="true" autoplay="true"></video>
 
 #### Chrome性能分析图:
 
