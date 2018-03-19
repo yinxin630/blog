@@ -20,7 +20,7 @@ webpack在2018年2月25号发布最新的[4.0版本](https://github.com/webpack/
 * 支持WebAssembly
 * 支持CommonJS, AMD, ESM等模块系统, 可以直接导入.mjs扩展名的模块文件, 对wasm模块也有实验性的支持
 
-今天我将自己维护的React脚手架从webpack2升级到了4, 记录一下需要改动的地方
+今天我将自己维护的React脚手架从webpack2升级到了4, 记录一下需要改动的地方. 本篇是"不完全指南", 欢迎补充更多内容
 
 ## 升级依赖版本
 
@@ -42,7 +42,7 @@ module.exports = {
 
 ## 删除UglifyJsPlugin插件
 
-在mode: production下, 会自动进行代码压缩. 可以修改配置项 `optimization.minimize: on/off` 控制是否启用, 修改配置项 `optimization.minimizer: {}` 调整默认行为
+在mode: production下, 会自动进行代码压缩. 可以修改配置项 `optimization.minimize: 'on'/'off'` 控制是否启用, 修改配置项 `optimization.minimizer: {}` 调整默认行为
 
 ## 删除CommonsChunkPlugin插件
 
