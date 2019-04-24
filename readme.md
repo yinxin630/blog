@@ -2,6 +2,7 @@
 
 ## 文章
 
+[Safari Invalid date 问题](https://github.com/yinxin630/blog/issues/7)  
 [babel能不能分析代码然后按需polyfill ？](https://github.com/yinxin630/blog/issues/5)  
 [体验WebAssembly](https://github.com/yinxin630/blog/issues/4)  
 [单枪匹马撸个聊天室, 支持Web/Android/iOS三端](https://github.com/yinxin630/blog/issues/3)  
