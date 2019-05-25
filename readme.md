@@ -15,3 +15,4 @@
 
 [LeetCode 146. LRU缓存机制](https://github.com/yinxin630/blog/issues/6)   
 [LeetCode 316. 去除重复字母](https://github.com/yinxin630/blog/issues/9)   
+[LeetCode 1027. 最长等差数列](https://github.com/yinxin630/blog/issues/11)   
