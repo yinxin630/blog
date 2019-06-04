@@ -2,6 +2,7 @@
 
 ## 文章
 
+[学习使用 redis](https://github.com/yinxin630/blog/issues/15)  
 [记录一些烦人的浏览器兼容性问题](https://github.com/yinxin630/blog/issues/13)  
 [Docker自动化构建镜像和常用命令](https://github.com/yinxin630/blog/issues/10)  
 [时间戳和时区问题](https://github.com/yinxin630/blog/issues/8)  
