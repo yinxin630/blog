@@ -2,6 +2,7 @@
 
 ## 文章
 
+[Less Mixin 的骚操作, 减少重复代码](https://github.com/yinxin630/blog/issues/16)  
 [学习使用 redis](https://github.com/yinxin630/blog/issues/15)  
 [记录一些烦人的浏览器兼容性问题](https://github.com/yinxin630/blog/issues/13)  
 [Docker自动化构建镜像和常用命令](https://github.com/yinxin630/blog/issues/10)  
