@@ -2,7 +2,7 @@
 
 ## 文章
 
-[要实现60FPS动画, 你需要了解这些](https://github.com/yinxin630/blog/issues/18)  
+[要实现60FPS动画, 你需要了解这些](https://github.com/yinxin630/blog/issues/19)  
 [事件绑定与类继承结合时的最佳实践](https://github.com/yinxin630/blog/issues/17)  
 [Less Mixin 的骚操作, 减少重复代码](https://github.com/yinxin630/blog/issues/16)  
 [学习使用 redis](https://github.com/yinxin630/blog/issues/15)  
