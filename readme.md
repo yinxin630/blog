@@ -2,6 +2,7 @@
 
 ## 文章
 
+[webpack 4 新增 sideEffects 配置的作用和注意事项](https://github.com/yinxin630/blog/issues/23)  
 [Jest单元测试配置和所遇问题解决办法](https://github.com/yinxin630/blog/issues/22)  
 [在react里渲染vue组件](https://github.com/yinxin630/blog/issues/20)  
 [要实现60FPS动画, 你需要了解这些](https://github.com/yinxin630/blog/issues/19)  
