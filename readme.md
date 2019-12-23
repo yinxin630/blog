@@ -4,6 +4,7 @@
 
 ## 文章
 
+[从一次 vue ssr 渲染客户端报错, 来看 ssr 客户端激活过程](https://github.com/yinxin630/blog/issues/31)   
 [移动端 vw 布局实现 1px 边框线的 scss mixin](https://github.com/yinxin630/blog/issues/28)   
 [lerna 相关](https://github.com/yinxin630/blog/issues/27)   
 [编写优雅的 commit message 并自动生成 changelog](https://github.com/yinxin630/blog/issues/26)   
