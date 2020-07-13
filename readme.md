@@ -1,6 +1,6 @@
 # 碎碎酱的博客
 
-老博客地址: [https://blog.suisuijiang.com/](https://blog.suisuijiang.com/)
+老博客地址: [https://www.suisuijiang.com/blog/](https://www.suisuijiang.com/blog/)
 
 ## 文章
 
