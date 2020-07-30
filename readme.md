@@ -4,6 +4,7 @@
 
 ## 文章
 
+[使用 github actions 优化开发工作流](https://github.com/yinxin630/blog/issues/37)   
 [基于 linaria 的 CSS in JS 方案](https://github.com/yinxin630/blog/issues/36)   
 [解决在 Canvas 中使用自定义字体初次绘制文字时不生效的问题](https://github.com/yinxin630/blog/issues/35)   
 [实现一套前端应用监控系统](https://github.com/yinxin630/blog/issues/30)   
